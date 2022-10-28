@@ -1,9 +1,9 @@
 import requests
 from datetime import datetime
 
-data = datetime.now().date()
+data = str(datetime.now().date())
 teacher = input()
 
-x = requests.get('https://erp.nttek.ru/api/schedule/legacy/('data')/('teacher')')
+x = requests.get('https://erp.nttek.ru/api/schedule/legacy/' + data + '/' + teacher)
 
-print(x)
+print(x.json())
